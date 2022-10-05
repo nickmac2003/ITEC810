@@ -56,9 +56,7 @@ class TweetCrawler:
             tweetDate = tweet.created_at
             append_data(path, str(tweetDate) + ' ' + tweet.text + '<#@#>')
         count = 0
-
-    # Function to use the sentiment api to crawl and analyze the tweets that get scraped
-
+  
     # Function to get the tweets from the users timeline
     def timeLine(self):
         timelines = ''
