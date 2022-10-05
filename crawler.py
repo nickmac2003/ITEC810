@@ -14,10 +14,10 @@ class TweetCrawler:
 
     def __init__(self):
         self.api = ''
-        self.access_token = '1573152022299398147-xI6kglHXpAaQUi2ncVdQYFHskSpGbA'
-        self.access_token_secret = 'X8ObJ411hbafScMLRuK9AM2h96sH1N4cSp9q6zcssKCSI'
-        self.consumer_key = 'RUHoLs03QSb3awIlD451cVdSr'
-        self.consumer_secret = 'iY1DepXgviki4l5Coml9whR0KBeg5fGrbNiqWTMRDdzsnTfbbK'
+        self.access_token = 'Insert Access Token Here'
+        self.access_token_secret = 'Insert Access Token Secret Here'
+        self.consumer_key = 'Insert API Key Here'
+        self.consumer_secret = 'Insert API Secret Here'
         self.buildAPI()
         create_directory(DIRECTORY)
 
