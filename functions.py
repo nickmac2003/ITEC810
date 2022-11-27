@@ -11,7 +11,7 @@ def append_data(path, data):
 # Function to create the directory if it does not already exist
 def create_directory(directory):
     if not os.path.exists(directory):
-        print('Creating Project' + directory)
+        print('Creating Directory ' + directory)
         os.makedirs(directory)
 
 
@@ -42,3 +42,4 @@ def write_file(path, data):
     f = open(path, 'w')
     f.write(data)
     f.close()
+

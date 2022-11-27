@@ -5,19 +5,20 @@ from textblob import TextBlob
 import tweepy
 from tweepy import OAuthHandler
 
-# Set the Directory and the Maximum amount of tweets to scrape.
+# Set the Directory, the Maximum number of tweets to scrape, and the date range of tweets.
 DIRECTORY = 'Scraped_Tweets/'
-MAX_TWEETS = 1000
+MAX_TWEETS = 50
+until = '2022-11-25'
 
 # Define the Twitter Crawler class to setup and connect to the twitter api
 class TweetCrawler:
 
     def __init__(self):
         self.api = ''
-        self.access_token = 'Insert Access Token Here'
-        self.access_token_secret = 'Insert Access Token Secret Here'
-        self.consumer_key = 'Insert API Key Here'
-        self.consumer_secret = 'Insert API Secret Here'
+        self.access_token = '1573152022299398147-xI6kglHXpAaQUi2ncVdQYFHskSpGbA'
+        self.access_token_secret = 'X8ObJ411hbafScMLRuK9AM2h96sH1N4cSp9q6zcssKCSI'
+        self.consumer_key = 'RUHoLs03QSb3awIlD451cVdSr'
+        self.consumer_secret = 'iY1DepXgviki4l5Coml9whR0KBeg5fGrbNiqWTMRDdzsnTfbbK'
         self.buildAPI()
         create_directory(DIRECTORY)
 
@@ -26,6 +27,19 @@ class TweetCrawler:
         auth = OAuthHandler(self.consumer_key, self.consumer_secret)
         auth.set_access_token(self.access_token, self.access_token_secret)
         self.api = tweepy.API(auth)
+
+    # Function to Count the Number of Tweets Scraped
+    def countTweets(self, keyword):
+        path = DIRECTORY + keyword + '/scrapedTweets.txt'
+        content = []
+        with open(path, 'r') as f:
+            data = f.read()
+            data = data.split('<#@#>')
+            content = [x for x in data if not x == '']
+        count = (len(content)-1)
+        print(keyword, count)
+#       print(content)
+        return content
 
     # Function to read the tweets that have already been scraped.
     def readTweets(self, keyword):
@@ -38,7 +52,7 @@ class TweetCrawler:
         print(content)
         return content
 
-    # Function to search tweets by keyword
+ # Function to search tweets by keyword
     def searchTweets(self, keyword):
         public_tweets = self.api.search_tweets(keyword)
         self.writeTweet(keyword, public_tweets)
@@ -47,16 +61,13 @@ class TweetCrawler:
     # Function to search tweets by hashtag
     def searchHashtag(self, keyword):
         hashtag = keyword
-        count = 0
         HASHTAG_DIRECTORY = DIRECTORY + hashtag + '/'
         create_directory(HASHTAG_DIRECTORY)
         path = HASHTAG_DIRECTORY + 'scrapedTweets.txt'
-        for tweet in tweepy.Cursor(self.api.search_tweets, q='#' + hashtag, rpp=10000, lang="en", since_id=0).items(MAX_TWEETS):
-            count += 1
+        for tweet in tweepy.Cursor(self.api.search_tweets, q='#' + hashtag, lang="en", since_id=0).items(MAX_TWEETS):
             tweetDate = tweet.created_at
             append_data(path, str(tweetDate) + ' ' + tweet.text + '<#@#>')
-        count = 0
-  
+
     # Function to get the tweets from the users timeline
     def timeLine(self):
         timelines = ''
