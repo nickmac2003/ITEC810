@@ -44,6 +44,7 @@ pattern[4] = str(date.today() + timedelta(days=-4))
 pattern[5] = str(date.today() + timedelta(days=-5))
 pattern[6] = str(date.today() + timedelta(days=-6))
 pattern[7] = str(date.today() + timedelta(days=-7))
+
 zeroDays = 0
 oneDay = 0
 twoDays = 0
@@ -71,6 +72,44 @@ with open(path[0],"r") as file:
             sixDays +=1
         elif re.search(pattern[7], line):
             sevenDays +=1
+
+today=datetime.now()
+now=('\n'+'Words Searched: '+(today.strftime("%x %X"))+'\n')
+zero=(pattern[0]+": "+(str(zeroDays))+' Tweets')
+one=(pattern[1]+": "+(str(oneDay))+' Tweets')
+two=(pattern[2]+": "+(str(twoDays))+' Tweets')
+three=(pattern[3]+": "+(str(threeDays))+' Tweets')
+four=(pattern[4]+": "+(str(fourDays))+' Tweets')
+five=(pattern[5]+": "+(str(fiveDays))+' Tweets')
+six=(pattern[6]+": "+(str(sixDays))+' Tweets')
+seven=(pattern[7]+": "+(str(sevenDays))+' Tweets')
+blankLine=('\n')
+
+with open("results.txt", 'a') as f:
+    f.write(now)
+    f.write(blankLine)
+    f.write(word1)
+    f.close()
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(zero)
+    f.write(blankLine)
+    f.write(one)
+    f.write(blankLine)
+    f.write(two)
+    f.write(blankLine)
+    f.write(three)
+    f.write(blankLine)
+    f.write(four)
+    f.write(blankLine)
+    f.write(five)
+    f.write(blankLine)
+    f.write(six)
+    f.write(blankLine)
+    f.write(seven)
+    f.write(blankLine)
+    f.close()
 
 print(word1)
 print(pattern[0], "-", zeroDays, 'Tweets')
@@ -111,6 +150,41 @@ with open(path[1],"r") as file:
         elif re.search(pattern[7], line):
             sevenDays +=1
 
+zero=(pattern[0]+": "+(str(zeroDays))+' Tweets')
+one=(pattern[1]+": "+(str(oneDay))+' Tweets')
+two=(pattern[2]+": "+(str(twoDays))+' Tweets')
+three=(pattern[3]+": "+(str(threeDays))+' Tweets')
+four=(pattern[4]+": "+(str(fourDays))+' Tweets')
+five=(pattern[5]+": "+(str(fiveDays))+' Tweets')
+six=(pattern[6]+": "+(str(sixDays))+' Tweets')
+seven=(pattern[7]+": "+(str(sevenDays))+' Tweets')
+blankLine=('\n')
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(word2)
+    f.close()
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(zero)
+    f.write(blankLine)
+    f.write(one)
+    f.write(blankLine)
+    f.write(two)
+    f.write(blankLine)
+    f.write(three)
+    f.write(blankLine)
+    f.write(four)
+    f.write(blankLine)
+    f.write(five)
+    f.write(blankLine)
+    f.write(six)
+    f.write(blankLine)
+    f.write(seven)
+    f.write(blankLine)
+    f.close()
+
 print(word2)
 print(pattern[0], "-", zeroDays, 'Tweets')
 print(pattern[1], "-", oneDay, 'Tweets')
@@ -149,6 +223,41 @@ with open(path[2],"r") as file:
             sixDays +=1
         elif re.search(pattern[7], line):
             sevenDays +=1
+
+zero=(pattern[0]+": "+(str(zeroDays))+' Tweets')
+one=(pattern[1]+": "+(str(oneDay))+' Tweets')
+two=(pattern[2]+": "+(str(twoDays))+' Tweets')
+three=(pattern[3]+": "+(str(threeDays))+' Tweets')
+four=(pattern[4]+": "+(str(fourDays))+' Tweets')
+five=(pattern[5]+": "+(str(fiveDays))+' Tweets')
+six=(pattern[6]+": "+(str(sixDays))+' Tweets')
+seven=(pattern[7]+": "+(str(sevenDays))+' Tweets')
+blankLine=('\n')
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(word3)
+    f.close()
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(zero)
+    f.write(blankLine)
+    f.write(one)
+    f.write(blankLine)
+    f.write(two)
+    f.write(blankLine)
+    f.write(three)
+    f.write(blankLine)
+    f.write(four)
+    f.write(blankLine)
+    f.write(five)
+    f.write(blankLine)
+    f.write(six)
+    f.write(blankLine)
+    f.write(seven)
+    f.write(blankLine)
+    f.close()
 
 print(word3)
 print(pattern[0], "-", zeroDays, 'Tweets')
@@ -189,6 +298,41 @@ with open(path[3],"r") as file:
         elif re.search(pattern[7], line):
             sevenDays +=1
 
+zero=(pattern[0]+": "+(str(zeroDays))+' Tweets')
+one=(pattern[1]+": "+(str(oneDay))+' Tweets')
+two=(pattern[2]+": "+(str(twoDays))+' Tweets')
+three=(pattern[3]+": "+(str(threeDays))+' Tweets')
+four=(pattern[4]+": "+(str(fourDays))+' Tweets')
+five=(pattern[5]+": "+(str(fiveDays))+' Tweets')
+six=(pattern[6]+": "+(str(sixDays))+' Tweets')
+seven=(pattern[7]+": "+(str(sevenDays))+' Tweets')
+blankLine=('\n')
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(word4)
+    f.close()
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(zero)
+    f.write(blankLine)
+    f.write(one)
+    f.write(blankLine)
+    f.write(two)
+    f.write(blankLine)
+    f.write(three)
+    f.write(blankLine)
+    f.write(four)
+    f.write(blankLine)
+    f.write(five)
+    f.write(blankLine)
+    f.write(six)
+    f.write(blankLine)
+    f.write(seven)
+    f.write(blankLine)
+    f.close()
+
 print(word4)
 print(pattern[0], "-", zeroDays, 'Tweets')
 print(pattern[1], "-", oneDay, 'Tweets')
@@ -227,6 +371,41 @@ with open(path[4],"r") as file:
             sixDays +=1
         elif re.search(pattern[7], line):
             sevenDays +=1
+
+zero=(pattern[0]+": "+(str(zeroDays))+' Tweets')
+one=(pattern[1]+": "+(str(oneDay))+' Tweets')
+two=(pattern[2]+": "+(str(twoDays))+' Tweets')
+three=(pattern[3]+": "+(str(threeDays))+' Tweets')
+four=(pattern[4]+": "+(str(fourDays))+' Tweets')
+five=(pattern[5]+": "+(str(fiveDays))+' Tweets')
+six=(pattern[6]+": "+(str(sixDays))+' Tweets')
+seven=(pattern[7]+": "+(str(sevenDays))+' Tweets')
+blankLine=('\n')
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(word5)
+    f.close()
+
+with open("results.txt", 'a') as f:
+    f.write(blankLine)
+    f.write(zero)
+    f.write(blankLine)
+    f.write(one)
+    f.write(blankLine)
+    f.write(two)
+    f.write(blankLine)
+    f.write(three)
+    f.write(blankLine)
+    f.write(four)
+    f.write(blankLine)
+    f.write(five)
+    f.write(blankLine)
+    f.write(six)
+    f.write(blankLine)
+    f.write(seven)
+    f.write(blankLine)
+    f.close()
 
 print(word5)
 print(pattern[0], "-", zeroDays, 'Tweets')
