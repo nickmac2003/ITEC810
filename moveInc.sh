@@ -1,4 +1,4 @@
-#!/bin/bash
+#  !/bin/bash
 #
 #  Author:    Nick MacDonald
 #  Name:      moveInc.sh
@@ -14,7 +14,7 @@ generateWords() {
 }
 
 searchTweets() {
-  sudo python3 main.py --hashtag '$1'
+  sudo python3 main.py --hashtag $1
 }
 
 words() {
@@ -39,10 +39,17 @@ findResults() {
   sudo python3 calcTweetsPerDay.py
 }
 
+clearResults() {
+  sudo rm results.txt
+  sudo touch results.txt
+  sudo chmod 777 results.txt
+}
+
 # Beginning of 'Main'
 
 #sudo rm -r Scraped_Tweets
 #sudo mkdir Scraped_Tweets
+#clearResults
 clear
 generateWords
 echo
